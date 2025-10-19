@@ -3,4 +3,7 @@
     <string name="play_previous">PREVIOUS</string>
     <string name="play_play">PLAY</string>
     <string name="play_next">NEXT</string>
+    <string name="desc_play_pause">PLAY/PAUSE</string>
+    <string name="desc_play_previous">PLAY PREVIOUS</string>
+    <string name="desc_play_next">Play next</string>
 </resources>

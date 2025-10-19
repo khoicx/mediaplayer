@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Drop Shadow -->
+    <item>
+        <shape>
+            <solid android:color="#80000000" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+
+    <!-- Background -->
+    <item android:bottom="3dp" android:right="3dp" android:top="1dp" android:left="1dp">
+        <shape>
+            <solid android:color="@color/semi_transparent_black" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+</layer-list>

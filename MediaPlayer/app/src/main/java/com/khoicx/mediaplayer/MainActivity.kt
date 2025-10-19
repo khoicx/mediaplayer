@@ -9,12 +9,9 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.khoicx.mediaplayer.databinding.ActivityMainBinding
 
@@ -39,17 +36,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+//        enableEdgeToEdge()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
-            binding.buttonContainer.setPadding(0, 0, 0, systemBars.bottom)
-            insets
-        }
 
         checkAndRequestPermission()
         setupButtonClickListeners()
@@ -147,14 +137,14 @@ class MainActivity : AppCompatActivity() {
 
         if (mediaPlayer?.isPlaying == true) {
             mediaPlayer?.pause()
-            "@string/play_play".also { binding.buttonPlay.text = it }
+            binding.buttonPlay.setImageResource(R.drawable.ic_play)
         } else {
             if (mediaPlayer == null) {
                 startPlaying()
             } else {
                 mediaPlayer?.start()
             }
-            "@string/play_pause".also { binding.buttonPlay.text = it }
+            binding.buttonPlay.setImageResource(R.drawable.ic_pause)
         }
     }
 
@@ -176,7 +166,7 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer?.release()
         mediaPlayer = MediaPlayer.create(this, songs[currentSongIndex])
         mediaPlayer?.start()
-        "@string/play_pause".also { binding.buttonPlay.text = it }
+        binding.buttonPlay.setImageResource(R.drawable.ic_pause)
 
         title = "Playing: ${songNames[currentSongIndex]}"
 
