@@ -7,56 +7,89 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <RadioGroup
+        android:id="@+id/source_selection_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/border_3d"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio_button_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/source_device"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radio_button_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white"
+            android:text="@string/source_server"/>
+
+    </RadioGroup>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSongs"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/border_3d"
-        app:layout_constraintBottom_toTopOf="@+id/button_play"
+        app:layout_constraintBottom_toTopOf="@+id/buttons_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/source_selection_group"
         tools:listitem="@android:layout/simple_list_item_1" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_play"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:contentDescription="@string/desc_play_pause"
-        android:src="@drawable/ic_play"
-        app:backgroundTint="?attr/colorPrimary"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/border_3d"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:maxImageSize="32dp"
-        app:tint="?attr/colorOnPrimary" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_previous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:contentDescription="@string/desc_play_previous"
-        android:src="@drawable/ic_previous"
-        app:backgroundTint="?attr/colorSecondary"
-        app:layout_constraintBottom_toBottomOf="@+id/button_play"
-        app:layout_constraintEnd_toStartOf="@+id/button_play"
-        app:layout_constraintTop_toTopOf="@+id/button_play"
-        app:tint="?attr/colorOnSecondary" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:contentDescription="@string/desc_play_previous"
+            android:src="@drawable/ic_previous"
+            app:backgroundTint="?attr/colorSecondary"
+            app:tint="?attr/colorOnSecondary" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:contentDescription="@string/desc_play_next"
-        android:src="@drawable/ic_next"
-        app:backgroundTint="?attr/colorSecondary"
-        app:layout_constraintBottom_toBottomOf="@+id/button_play"
-        app:layout_constraintStart_toEndOf="@+id/button_play"
-        app:layout_constraintTop_toTopOf="@+id/button_play"
-        app:tint="?attr/colorOnSecondary" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:contentDescription="@string/desc_play_pause"
+            android:src="@drawable/ic_play"
+            app:backgroundTint="?attr/colorPrimary"
+            app:maxImageSize="32dp"
+            app:tint="?attr/colorOnPrimary" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:contentDescription="@string/desc_play_next"
+            android:src="@drawable/ic_next"
+            app:backgroundTint="?attr/colorSecondary"
+            app:tint="?attr/colorOnSecondary" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

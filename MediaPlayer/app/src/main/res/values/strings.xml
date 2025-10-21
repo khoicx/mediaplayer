@@ -6,4 +6,16 @@
     <string name="desc_play_pause">PLAY/PAUSE</string>
     <string name="desc_play_previous">PLAY PREVIOUS</string>
     <string name="desc_play_next">Play next</string>
+    <string name="source_device">Device</string>
+    <string name="source_server">Server</string>
+
+    <!-- Player States -->
+    <string name="state_loading">Loading: %s</string>
+    <string name="state_playing">Playing: %s</string>
+    <string name="state_error">Error</string>
+    <string name="error_playback_failed">Playback failed. What: %d, Extra: %d</string>
+    <string name="error_server_empty">Server returned an empty song list.</string>
+    <string name="error_no_music_found">No music file found</string>
+    <string name="error_permission_denied">Quyền truy cập bộ nhớ bị từ chối!</string>
+    <string name="error_failed_to_fetch_songs">Failed to fetch songs: %s</string>
 </resources>
