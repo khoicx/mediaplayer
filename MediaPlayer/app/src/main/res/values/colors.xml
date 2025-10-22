@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="semi_transparent_black">#AA000000</color>
+    <color name="accent_color">#FFBB86FC</color>
 </resources>

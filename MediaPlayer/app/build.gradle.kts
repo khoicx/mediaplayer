@@ -77,5 +77,7 @@ dependencies {
     implementation(libs.ktor.ktor.client.auth)
     implementation(libs.ktor.ktor.client.logging)
     implementation(libs.logback.classic)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
 
 }

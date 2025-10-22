@@ -18,4 +18,7 @@
     <string name="error_no_music_found">No music file found</string>
     <string name="error_permission_denied">Quyền truy cập bộ nhớ bị từ chối!</string>
     <string name="error_failed_to_fetch_songs">Failed to fetch songs: %s</string>
+    <string name="desc_shuffle">Shuffle</string>
+    <string name="suggestion_mode">Suggestion</string>
+    <string name="desc_repeat">Repeat</string>
 </resources>

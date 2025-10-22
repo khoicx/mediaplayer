@@ -7,33 +7,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RadioGroup
-        android:id="@+id/source_selection_group"
+    <LinearLayout
+        android:id="@+id/source_selection_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:background="@drawable/border_3d"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/radio_button_device"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/source_device"
-            android:textColor="@android:color/white"
-            android:buttonTint="@android:color/white"
-            android:checked="true"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radio_button_server"
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/source_device"
+                android:textColor="@android:color/white" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/source_server"
+                android:textColor="@android:color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_shuffle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/desc_shuffle"
+                android:src="@drawable/ic_shuffle"
+                app:backgroundTint="?attr/colorSecondary"
+                app:fabSize="mini"
+                app:tint="?attr/colorOnSecondary" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:buttonTint="@android:color/white"
-            android:text="@string/source_server"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-    </RadioGroup>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_suggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/suggestion_mode"
+                android:textColor="@android:color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/desc_repeat"
+                android:src="@drawable/ic_repeat_off"
+                app:backgroundTint="?attr/colorSecondary"
+                app:fabSize="mini"
+                app:tint="?attr/colorOnSecondary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSongs"
@@ -44,7 +88,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttons_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/source_selection_group"
+        app:layout_constraintTop_toBottomOf="@+id/source_selection_layout"
         tools:listitem="@android:layout/simple_list_item_1" />
 
     <LinearLayout

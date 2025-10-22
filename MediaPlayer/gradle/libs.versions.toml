@@ -13,6 +13,7 @@ ktorClientCore = "3.3.1"
 ktorClientLogging = "3.3.1"
 ktorSerializationKotlinxJson = "3.3.1"
 #noinspection NewerVersionAvailable
+lifecycleViewmodelKtx = "2.9.4"
 logbackClassic = "1.2.3"
 material = "1.13.0"
 activity = "1.11.0"
@@ -20,6 +21,7 @@ constraintlayout = "2.2.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
