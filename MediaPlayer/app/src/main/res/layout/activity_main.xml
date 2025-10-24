@@ -56,13 +56,21 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/text_suggestion_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/suggestion_mode"
+                android:textColor="@android:color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"/>
+
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switch_suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/suggestion_mode"
-                android:textColor="@android:color/white" />
+                android:layout_marginStart="8dp"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/button_repeat"
@@ -83,13 +91,45 @@
         android:id="@+id/recyclerViewSongs"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
         android:background="@drawable/border_3d"
-        app:layout_constraintBottom_toTopOf="@+id/buttons_layout"
+        app:layout_constraintBottom_toTopOf="@+id/timebar_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/source_selection_layout"
         tools:listitem="@android:layout/simple_list_item_1" />
+
+    <LinearLayout
+        android:id="@+id/timebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttons_layout">
+
+        <TextView
+            android:id="@+id/text_current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_time"
+            android:textColor="@android:color/white"/>
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/text_total_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_time"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buttons_layout"

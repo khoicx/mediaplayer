@@ -21,4 +21,7 @@
     <string name="desc_shuffle">Shuffle</string>
     <string name="suggestion_mode">Suggestion</string>
     <string name="desc_repeat">Repeat</string>
+    <string name="suggestion_settings_title">Suggestion Settings</string>
+    <string name="suggest_by_location">Suggest by current location</string>
+    <string name="default_time">0:00</string>
 </resources>

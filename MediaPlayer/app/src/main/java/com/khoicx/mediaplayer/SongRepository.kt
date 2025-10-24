@@ -56,26 +56,4 @@ class SongRepository(private val context: Context, private val client: HttpClien
             Song(songUri, title, SongSource.SERVER)
         }
     }
-
-    suspend fun getSuggestionSongs(accessToken: String): List<Song> {
-        val songsResponse = client.get(MainActivity.SUGGESTIONS_URL) {
-            headers {
-                append("Authorization", "Token $accessToken")
-            }
-        }
-        val songListResponse: SongListResponse = songsResponse.body()
-        return songListResponse.data.files.map { songFile ->
-            val onceDecoded = URLDecoder.decode(songFile.url, "UTF-8")
-            val twiceDecoded = URLDecoder.decode(onceDecoded, "UTF-8")
-            val songUri = twiceDecoded.toUri()
-
-            val title = if (songFile.name.isNullOrBlank()) {
-                songUri.lastPathSegment?.substringBeforeLast('.') ?: "Unknown Title"
-            } else {
-                songFile.name
-            }
-
-            Song(songUri, title, SongSource.SERVER)
-        }
-    }
 }
